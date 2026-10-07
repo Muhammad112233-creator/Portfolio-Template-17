@@ -1,0 +1,211 @@
+import type { AppId } from '../store/os';
+
+export interface AppDef {
+  id: AppId;
+  name: string;
+  subtitle: string;
+  glyph: string;
+  color: string;
+  pinned: boolean;
+  desktop: boolean;
+  group: 'system' | 'productivity' | 'recreation';
+  shortcut?: string;
+  blurb: string;
+}
+
+/**
+ * Single registry for everything the shell can launch. Desktop icons, the start
+ * menu grid, search, the taskbar and the store all read from here.
+ */
+export const APPS: AppDef[] = [
+  {
+    id: 'welcome',
+    name: 'Welcome',
+    subtitle: 'Start here',
+    glyph: 'sparkle',
+    color: '#5c83ff',
+    pinned: true,
+    desktop: false,
+    group: 'system',
+    shortcut: 'W',
+    blurb: 'A two-minute tour of the desktop and the shortest route to my work.',
+  },
+  {
+    id: 'browser',
+    name: 'Meridian Browser',
+    subtitle: 'The written record',
+    glyph: 'globe',
+    color: '#2f6df6',
+    pinned: true,
+    desktop: true,
+    group: 'productivity',
+    shortcut: 'B',
+    blurb: 'Biography, case studies, writing and contact pages in a readable layout.',
+  },
+  {
+    id: 'explorer',
+    name: 'File Explorer',
+    subtitle: 'D:/Projects',
+    glyph: 'folder',
+    color: '#e0a63a',
+    pinned: true,
+    desktop: true,
+    group: 'system',
+    shortcut: 'E',
+    blurb: 'Every folder on this machine, including the ones nobody was meant to open.',
+  },
+  {
+    id: 'works',
+    name: 'Workbench',
+    subtitle: 'Selected projects',
+    glyph: 'layers',
+    color: '#12a5a5',
+    pinned: true,
+    desktop: true,
+    group: 'productivity',
+    shortcut: 'K',
+    blurb: 'Eight case studies with the problem, the approach and what changed.',
+  },
+  {
+    id: 'gallery',
+    name: 'Photos',
+    subtitle: 'Studio & travel',
+    glyph: 'image',
+    color: '#d4568f',
+    pinned: true,
+    desktop: true,
+    group: 'recreation',
+    shortcut: 'P',
+    blurb: 'The wall, the desk, the rooftops — an actual look at the work.',
+  },
+  {
+    id: 'studio',
+    name: 'Sound Lab',
+    subtitle: 'Ambient synthesizer',
+    glyph: 'waveform',
+    color: '#a35bd4',
+    pinned: true,
+    desktop: false,
+    group: 'recreation',
+    shortcut: 'M',
+    blurb: 'A small generative synthesizer. Hit play and leave the window open.',
+  },
+  {
+    id: 'terminal',
+    name: 'Terminal',
+    subtitle: 'RayanOS shell',
+    glyph: 'terminal',
+    color: '#2b2f36',
+    pinned: true,
+    desktop: true,
+    group: 'system',
+    shortcut: 'T',
+    blurb: 'Type help. Or do not, and discover things by accident.',
+  },
+  {
+    id: 'resume',
+    name: 'Resume',
+    subtitle: 'Experience & skills',
+    glyph: 'file-text',
+    color: '#4f9d5a',
+    pinned: true,
+    desktop: true,
+    group: 'productivity',
+    shortcut: 'R',
+    blurb: 'Nine years condensed into one scrollable document.',
+  },
+  {
+    id: 'notes',
+    name: 'Notepad',
+    subtitle: 'Scratch notes',
+    glyph: 'notebook',
+    color: '#d4a12f',
+    pinned: true,
+    desktop: false,
+    group: 'productivity',
+    shortcut: 'N',
+    blurb: 'Notes that persist between visits. Ctrl+S writes to this browser.',
+  },
+  {
+    id: 'store',
+    name: 'Store',
+    subtitle: 'Install more apps',
+    glyph: 'bag',
+    color: '#2f6df6',
+    pinned: false,
+    desktop: false,
+    group: 'system',
+    blurb: 'Some apps install. One of them is quietly very good.',
+  },
+  {
+    id: 'wall',
+    name: 'Memory Wall',
+    subtitle: 'Leave a note',
+    glyph: 'message',
+    color: '#e2603b',
+    pinned: false,
+    desktop: false,
+    group: 'recreation',
+    blurb: 'A public corkboard. Say hello and it stays on this machine.',
+  },
+  {
+    id: 'snake',
+    name: 'Wormhole',
+    subtitle: 'Grid game',
+    glyph: 'gamepad',
+    color: '#7c9cff',
+    pinned: false,
+    desktop: false,
+    group: 'recreation',
+    blurb: 'Arrow keys. Fruit. Consequences.',
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    subtitle: 'Start a conversation',
+    glyph: 'send',
+    color: '#5c83ff',
+    pinned: false,
+    desktop: false,
+    group: 'system',
+    blurb: 'Write a message that opens straight in your mail client.',
+  },
+  {
+    id: 'calculator',
+    name: 'Calculator',
+    subtitle: 'Standard',
+    glyph: 'calculator',
+    color: '#4f9d5a',
+    pinned: false,
+    desktop: false,
+    group: 'productivity',
+    blurb: 'It does arithmetic and keeps a tape of what you did.',
+  },
+  {
+    id: 'notepad',
+    name: 'Sticky Note',
+    subtitle: 'Quick capture',
+    glyph: 'sticky',
+    color: '#d4a12f',
+    pinned: false,
+    desktop: false,
+    group: 'productivity',
+    blurb: 'A single small note for the thing you must not forget.',
+  },
+  {
+    id: 'settings',
+    name: 'Settings',
+    subtitle: 'Appearance & system',
+    glyph: 'settings',
+    color: '#5f6470',
+    pinned: true,
+    desktop: false,
+    group: 'system',
+    shortcut: 'S',
+    blurb: 'Theme, accent, wallpaper, brightness and the screen filters.',
+  },
+];
+
+export const appById = (id: AppId) => APPS.find((a) => a.id === id);
+export const pinnedApps = APPS.filter((a) => a.pinned);
+export const desktopApps = APPS.filter((a) => a.desktop);
