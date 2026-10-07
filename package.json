@@ -1,0 +1,32 @@
+{
+  "name": "rayan-os-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "RayanOS - an interactive desktop-operating-system portfolio built with React 19, TypeScript, Vite and Zustand.",
+  "author": "Rayan Malik",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.app.json --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "framer-motion": "^12.4.2",
+    "lucide-react": "^0.474.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.3",
+    "vite": "^6.0.11"
+  }
+}
