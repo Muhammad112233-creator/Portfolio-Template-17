@@ -1,0 +1,17 @@
+{
+  "name": "RayanOS — Interactive Desktop Portfolio",
+  "short_name": "RayanOS",
+  "description": "An operating-system style portfolio built with React 19, TypeScript, Vite and Zustand.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0c12",
+  "theme_color": "#0a0c12",
+  "categories": ["portfolio", "productivity", "developer"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
